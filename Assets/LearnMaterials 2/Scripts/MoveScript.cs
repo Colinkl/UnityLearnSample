@@ -12,7 +12,7 @@ public class MoveScript : BaseScript
     {
         Vector3 t = (dest - transform.position).normalized;
 
-        while (Vector3.Distance(transform.position, dest) > 2f * Time.deltaTime)
+        while (Vector3.Distance(transform.position, dest) > 20f * Time.deltaTime)
         {
             transform.position += Time.deltaTime * velocity * t;
             yield return null;
