@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class MoveScript : BaseScript
 {
-    [SerializeField]
     public float velocity = 1f;
 
     [SerializeField]
@@ -15,7 +14,7 @@ public class MoveScript : BaseScript
 
         while (Vector3.Distance(transform.position, dest) > 2f * Time.deltaTime)
         {
-            transform.position += t * velocity * Time.deltaTime;
+            transform.position += Time.deltaTime * velocity * t;
             yield return null;
 
         }
@@ -28,17 +27,5 @@ public class MoveScript : BaseScript
     public override void Use()
     {
         StartCoroutine(Move());
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
