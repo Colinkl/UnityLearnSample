@@ -25,7 +25,8 @@ namespace Assets.LearnMaterials_2.Scripts
 
             if (Physics.Raycast(transform.position, direction, out hit))
             {
-                hit.transform.GetComponent<ObstacleItem>()?.GetDamage(Time.deltaTime);
+                var x = hit.transform.GetComponent<ObstacleItem>();
+                x?.GetDamage(Time.deltaTime);
             }
             Debug.DrawRay(transform.position, direction, Color.red);
         }
