@@ -203,6 +203,7 @@ Transform:
   m_LocalRotation: {x: -0.22923478, y: 0.7296621, z: -0.29101428, w: -0.57476544}
   m_LocalPosition: {x: 6.984686, y: 6.8519897, z: 1.9953165}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -219,7 +220,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749790b422c89fd44a7037e6af4d2f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObj: {fileID: 0}
+  gameObj: {fileID: 6927448452525591632, guid: e92049724d3e2ee4f873aef37604370f, type: 3}
+--- !u!114 &971075148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7333736823180049574, guid: ed2e39ee0d2adb142a7d126e662eb0f0, type: 3}
+  m_PrefabInstance: {fileID: 1962936043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a111ee3ab559b54ca4f1fc737583672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1131751796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -230,6 +242,34 @@ PrefabInstance:
     - target: {fileID: 7134968879408173282, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
       propertyPath: m_Name
       value: ObstacleItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 971075148}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivateModule
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TransparentModule, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7134968879408173295, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
       propertyPath: m_RootOrder
@@ -366,6 +406,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -384,7 +425,7 @@ GameObject:
   - component: {fileID: 1802362034}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: InteractivePlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,6 +455,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -462,10 +504,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835745422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6993280254465785974, guid: e1676072597cd1e44b7deee5b0c97ee3, type: 3}
+  m_PrefabInstance: {fileID: 2049488812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c915fc50dfb8c44bc0953e62370f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1962936043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -533,6 +587,34 @@ PrefabInstance:
     - target: {fileID: 7134968879408173282, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
       propertyPath: m_Name
       value: ObstacleItem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1835745422}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivateModule
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScalerModule, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7134968879408173283, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
+      propertyPath: onDestroyObstacle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7134968879408173295, guid: 1ea9bf7e42a86484797bce70b3cee9be, type: 3}
       propertyPath: m_RootOrder

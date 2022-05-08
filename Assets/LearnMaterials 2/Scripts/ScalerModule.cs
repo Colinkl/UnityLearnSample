@@ -4,9 +4,9 @@ using UnityEngine;
 [HelpURL("https://docs.google.com/document/d/1rdTEVSrCcYOjqTJcFCHj46RvnbdJhmQUb3gHMDhVftI/edit?usp=sharing")]
 public class ScalerModule : MonoBehaviour
 {
-    private Vector3 targetScale = new Vector3(2,2,2);
+    private Vector3 targetScale = new Vector3(0,0,0);
 
-    private float changeSpeed;
+    private float changeSpeed = 0.3f;
 
     private Vector3 defaultScale;
     private Transform myTransform;

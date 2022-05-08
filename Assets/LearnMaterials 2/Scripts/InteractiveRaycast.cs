@@ -60,7 +60,7 @@ namespace Assets.LearnMaterials_2.Scripts
             {
                 LeftButtonAction();
             }
-            if (Input.GetMouseButtonDown(1))
+            else if (Input.GetMouseButtonDown(1))
             {
                 RightButtonAction();
             }

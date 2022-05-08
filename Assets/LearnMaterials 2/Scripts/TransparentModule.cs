@@ -6,7 +6,7 @@ using UnityEngine;
 [HelpURL("https://docs.google.com/document/d/1Cmm__cbik5J8aHAI6PPaAUmEMF3wAcNo3rpgzsYPzDM/edit?usp=sharing")]
 public class TransparentModule : MonoBehaviour
 {
-    private float changeSpeed;
+    private float changeSpeed = 0.5f;
 
     private float defaultAlpha;
     private Material mat;
@@ -19,6 +19,7 @@ public class TransparentModule : MonoBehaviour
         toDefault = false;
     }
 
+    [ContextMenu("Activate")]
     public void ActivateModule()
     {
         float target = toDefault ? defaultAlpha : 0;
