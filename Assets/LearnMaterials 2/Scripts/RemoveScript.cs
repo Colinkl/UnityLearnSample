@@ -8,17 +8,16 @@ public class RemoveScript : BaseScript
     [Min(0f)]
     private float speed = 1f;
 
-    [SerializeField]
-    private GameObject target;
-
     private Vector3 shrinkV = new Vector3(1, 1, 1);
+
+
     [ContextMenu("Use")]
     public override void Use()
     {
-        StartCoroutine(RemoveChilds());
+        StartCoroutine(RemoveChildsCoroutine());
     }
 
-    public IEnumerator RemoveChilds()
+    public IEnumerator RemoveChildsCoroutine()
     {
 
         for (int i = 0; i < transform.childCount; i++)

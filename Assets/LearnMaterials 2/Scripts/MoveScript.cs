@@ -6,7 +6,7 @@ public class MoveScript : BaseScript
     public float velocity = 1f;
 
     [SerializeField]
-    private Vector3 dest = new Vector3(3, 0, 0);
+    private Vector3 dest = new Vector3(0, 0, 1);
 
     IEnumerator Move()
     {

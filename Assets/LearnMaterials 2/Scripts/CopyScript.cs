@@ -11,15 +11,21 @@ public class CopyScript : BaseScript
 
     [SerializeField]
     [Min(1)]
-    private int count = 1;
+    private int count = 2;
 
     [SerializeField]
-    private float step;
+    private float step = 1;
     private Vector3 location = new Vector3 (0, 0, 0);
+
+    private void Start()
+    {
+        target = gameObject;
+    }
 
     [ContextMenu("Use")]
     public override void Use()
     {
+        target = gameObject;
         Copy();
     }
 
