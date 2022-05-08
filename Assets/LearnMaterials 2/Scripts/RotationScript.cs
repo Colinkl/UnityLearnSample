@@ -12,26 +12,24 @@ public class RotationScript : BaseScript
 
     private IEnumerator Rotate()
     {
-        Quaternion r = transform.rotation * Quaternion.Euler(vect);
-        var xxx = Quaternion.Angle(transform.rotation, r);
-        while (Mathf.Abs(Quaternion.Angle(transform.rotation, r)) >= 5)
+        Quaternion targetAngle = transform.rotation * Quaternion.Euler(vect);
+        while (Mathf.Abs(Quaternion.Angle(transform.rotation, targetAngle)) >= 5)
         {
 
-            var c = transform.rotation.eulerAngles;
-            var rot = vect * rotationSpeed * Time.deltaTime;
-            var f = Quaternion.Euler(rot) * transform.rotation;
-            var t = Mathf.Abs(Quaternion.Angle(transform.rotation, r));
-            var d = Mathf.Abs(Quaternion.Angle(transform.rotation, Quaternion.Euler(rot)* transform.rotation));
-            if (t <= d)
+            var currentAngle = transform.rotation.eulerAngles;
+            var rotarionAngle = vect * rotationSpeed * Time.deltaTime;
+            var targetAngleDelta = Mathf.Abs(Quaternion.Angle(transform.rotation, targetAngle));
+            var incrementAngleDelta = Mathf.Abs(Quaternion.Angle(transform.rotation, Quaternion.Euler(rotarionAngle)* transform.rotation));
+            if (targetAngleDelta <= incrementAngleDelta)
             {
                 break;
             }
 
-            transform.rotation = Quaternion.Euler(rot) * transform.rotation;
+            transform.rotation = Quaternion.Euler(rotarionAngle) * transform.rotation;
             yield return null;
         }
 
-        transform.rotation = r;
+        transform.rotation = targetAngle;
     }
 
     [ContextMenu("Rotate")]
