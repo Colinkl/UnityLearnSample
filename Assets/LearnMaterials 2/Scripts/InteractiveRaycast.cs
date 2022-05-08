@@ -10,8 +10,7 @@ namespace Assets.LearnMaterials_2.Scripts
     public class InteractiveRaycast : MonoBehaviour
     {
         public GameObject gameObj;
-        private InteractiveBox box;
-
+        private InteractiveBox lastBox;
         private void LeftButtonAction()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -29,14 +28,17 @@ namespace Assets.LearnMaterials_2.Scripts
                     if (tempBox == null)
                         return;
 
-                    if (box == null)
+                    if (lastBox == null)
                     {
-                        box = tempBox;
+                        lastBox = tempBox;
+                        return;
                     }
                     else
                     {
-                        box.AddNext(tempBox);
+                        lastBox.AddNext(tempBox);
                     }
+
+                    lastBox = tempBox;
                 }
             }
         }

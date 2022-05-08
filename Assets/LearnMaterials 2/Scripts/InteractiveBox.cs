@@ -10,8 +10,7 @@ namespace Assets.LearnMaterials_2.Scripts
 
         public void AddNext(InteractiveBox nextBox)
         {
-            if (nextBox != null)
-                nextItem = nextBox;
+            nextItem = nextBox;
         }
 
         void Update()
