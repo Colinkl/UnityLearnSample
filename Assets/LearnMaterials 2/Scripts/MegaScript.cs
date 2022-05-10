@@ -29,7 +29,7 @@ public class MegaScript : MonoBehaviour
         foreach (var s in scripts)
         {
             s.Use();
-            yield return new  WaitForSeconds(10);
+            yield return new  WaitForSeconds(5);
         }
     }
 
